@@ -5,3 +5,8 @@
 # React Router
 /.react-router/
 /build/
+
+# SQLite database (drizzle migrations in /drizzle are committed)
+app.db
+app.db-shm
+app.db-wal
