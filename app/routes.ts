@@ -1,3 +1,10 @@
-import { type RouteConfig, index } from "@react-router/dev/routes"
+import { type RouteConfig, index, layout, route } from "@react-router/dev/routes"
 
-export default [index("routes/home.tsx")] satisfies RouteConfig
+export default [
+  // A layout route renders the shared shell (nav + <Outlet/>) and adds NO url segment.
+  layout("routes/layout.tsx", [
+    index("routes/people.tsx"), //              "/"
+    route("expenses", "routes/expenses.tsx"), // "/expenses"
+  ]),
+] satisfies RouteConfig
+
